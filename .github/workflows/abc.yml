@@ -3,8 +3,7 @@ name: Automated Daily Commit
 on:
   schedule:
     - cron: "30 2 * * *"  # Runs daily at 2:30 AM UTC
-
-  workflow_dispatch:  # Allows manual triggering if needed
+  workflow_dispatch:  # Allows manual triggering
 
 jobs:
   commit-update:
@@ -13,7 +12,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Update log file (24f1001940@ds.study.iitm.ac.in)
+      - name: "Updating log file (24f1001940@ds.study.iitm.ac.in)"  # Email explicitly in the name
         run: |
           echo "Last update: $(date)" >> update-log.txt
 
